@@ -113,6 +113,7 @@ void Render::InitGlew() {
     LOG(INFO) << "Initializing GLEW";
     glewExperimental = GL_TRUE;
     GLenum glewStatus = glewInit();
+    glGetError();
     glCheckError();
     if (glewStatus != GLEW_OK) {
         LOG(FATAL) << "Failed to initialize GLEW: " << glewGetErrorString(glewStatus);
